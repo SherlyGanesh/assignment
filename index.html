@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Phonebook App</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Phonebook App</h1>
+      <div class="controls">
+        <input id="search" placeholder="Search contacts..." />
+        <button id="theme-toggle">Toggle Dark Mode</button>
+      </div>
+    </header>
+
+    <section class="form-section">
+      <h2>Add / Edit Contact</h2>
+      <form id="contact-form" novalidate>
+        <input type="hidden" id="contact-id" />
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" required placeholder="Full name" />
+          <div class="error" id="error-name"></div>
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input id="phone" required placeholder="Phone number" />
+          <div class="error" id="error-phone"></div>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="Email (optional)" />
+          <div class="error" id="error-email"></div>
+        </div>
+        <div class="actions">
+          <button type="submit" id="save-btn">Save</button>
+          <button type="button" id="cancel-edit" class="secondary" hidden>Cancel</button>
+        </div>
+      </form>
+      <div id="form-msg" class="message"></div>
+    </section>
+
+    <section class="list-section">
+      <h2>Contacts</h2>
+      <div id="contacts-container" class="contacts"></div>
+      <div id="empty-state" class="empty">No contacts found.</div>
+    </section>
+  </div>
+
+  <template id="contact-template">
+    <div class="contact-card">
+      <div class="info">
+        <div class="name"></div>
+        <div class="details">
+          <span class="phone"></span>
+          <span class="email"></span>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="edit">Edit</button>
+        <button class="delete">Delete</button>
+      </div>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
